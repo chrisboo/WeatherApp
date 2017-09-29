@@ -14,7 +14,8 @@
 'use strict';
 const http = require('http');
 const host = 'api.worldweatheronline.com';
-const wwoApiKey = 'ffe8d3dd66d84df18e2124310172809';
+const secrets = require('./secrets.js')
+const wwoApiKey = secrets.wwoApiKey;
 exports.weatherWebhook = (req, res) => {
   // Get the city and date from the request
   let city = req.body.result.parameters['geo-city']; // city is a required param
